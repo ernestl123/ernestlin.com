@@ -3,34 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="favicon.png">
-    <title>Coming soon!</title>
+    <title>Ernest Lin</title>
+    
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Google Fonts for crisp sans-serif and monospace typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for social and brand icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        html,
+        /* Modern Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
+            background-color: #0b131f; /* Matches the deep navy/dark blue background in image_9b740b.png */
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        /* Layout Container */
+        .portfolio-container {
+            width: 100%;
+            max-width: 900px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .portfolio-container {
+                grid-template-columns: 2fr 3fr;
+                gap: 5rem;
+            }
+        }
+
+        /* Left Column: Profile Card */
+        .profile-side {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        /* Profile Picture Container */
+        .profile-avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+            background-color: #16222f; /* Fallback background color */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-avatar img {
             width: 100%;
             height: 100%;
+            object-fit: cover;
         }
 
-        html {
-            display: table;
-            font-family: Lato, "Segoe UI", Avenir, Ubuntu, Tahoma, Verdana, Helvetica, sans-serif;
+        .name {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
         }
 
-        body {
-            display: table-cell;
-            vertical-align: middle;
-            text-align: center;
+        .location {
+            font-size: 1.1rem;
+            color: #708090; /* Muted gray-blue for secondary text */
+            font-weight: 400;
         }
 
-        h1 {
-            font-size: 4em;
-            font-weight: normal;
-            text-transform: lowercase;
+        .social-links {
+            display: flex;
+            gap: 1.25rem;
+            margin-top: 0.5rem;
         }
+
+        .social-links a {
+            color: #708090;
+            font-size: 1.5rem;
+            transition: color 0.2s ease;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            color: #ffffff;
+        }
+
+        /* Right Column: Content & Code Block */
+        .content-side {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        /* Code Block Styling matching image_9b740b.png syntax theme */
+        .code-block {
+            font-family: 'Fira Code', monospace;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            background: transparent;
+        }
+
+        /* Syntax Highlighting Colors */
+        .keyword { color: #ff79c6; }       /* Pink/Magenta */
+        .class-name { color: #50fa7b; }    /* Light Green */
+        .property { color: #bd93f9; }      /* Light Purple */
+        .string { color: #f1fa8c; }        /* Soft Yellow */
     </style>
 </head>
 <body>
-    <h1>Coming soon!</h1>
+
+    <div class="portfolio-container">
+        
+        <!-- Left Side: Identity -->
+        <section class="profile-side">
+            <div class="profile-avatar">
+                <img src="profile.jpg" alt="Ernest's Profile Picture">
+            </div>
+            
+            <h1 class="name">Ernest Lin</h1>
+            <p class="location">San Diego, CA</p>
+            <p class="school">UCSD '24 CSE</p>
+            <div class="social-links">
+                <a href="#" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </section>
+
+        <!-- Right Side: Developer "About Me" represented as a code snippet -->
+        <section class="content-side">
+            <h2 class="section-title">About Me</h2>
+            
+            <pre class="code-block"><code><span class="keyword">class</span> <span class="class-name">Ernest</span>:
+    <span class="keyword">def</span> <span class="class-name">__init__</span>(self):
+        self.<span class="property">role</span> = <span class="string">"Software Engineer"</span>
+        self.<span class="property">languages</span> = [<span class="string">"Python"</span>, <span class="string">"Java"</span>, <span class="string">"JS"</span>, <span class="string">"C++"</span>, <span class="string">"Chinese"</span>]
+        self.<span class="property">specialties</span> = [<span class="string">"Automation"</span>, <span class="string">"Systems"</span>, <span class="string">"Backend"</span>, <span class="string">"AI"</span>]
+
+    <span class="keyword">def</span> <span class="class-name">get_status</span>(self):
+        <span class="keyword">return</span> <span class="string">"Always learning."</span></code></pre>
+        </section>
+
+    </div>
+
 </body>
 </html>
